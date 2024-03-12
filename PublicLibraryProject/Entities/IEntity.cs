@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PublicLibraryApp.Entities
+﻿namespace PublicLibraryApp.Entities
 {
-    internal interface IEntity
+    public interface IEntity
     {
+        int Id { get; set; }
+        enum Category;
     }
 }

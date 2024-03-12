@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PublicLibraryApp.Entities;
 
 namespace PublicLibraryApp.Repositories
 {
-    internal interface IWriteRepository
+    public interface IWriteRepository<TEntity> where TEntity : class, IEntity
     {
+        void Add(TEntity item);
+        void Remove(TEntity item);
+        void Save();
     }
 }

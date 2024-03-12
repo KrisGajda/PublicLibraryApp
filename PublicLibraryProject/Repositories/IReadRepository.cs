@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PublicLibraryApp.Entities;
 
 namespace PublicLibraryApp.Repositories
 {
-    internal interface IReadRepository
+    public interface IReadRepository<out TEntity> where TEntity : class, IEntity
     {
+        IEnumerable<TEntity> GetAll();
+        TEntity GetById(int id);
     }
 }

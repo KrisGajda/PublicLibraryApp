@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PublicLibraryApp.Entities
+﻿namespace PublicLibraryApp.Entities
 {
-    internal class EntityBase
+    public abstract class EntityBase : IEntity
     {
+        public int Id { get; set; }
+        public enum Category
+        {
+            Book,
+            BoardGame,
+            Movie
+        }
     }
 }

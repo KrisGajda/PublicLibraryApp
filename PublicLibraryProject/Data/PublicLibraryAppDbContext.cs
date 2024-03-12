@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using PublicLibraryApp.Entities;
 
 namespace PublicLibraryApp.Data
 {
-    internal class PublicLibraryAppDbContext
+    public class PublicLibraryAppDbContext : DbContext
     {
+        public DbSet<Book> Books => Set<Book>();      
+        public DbSet<BoardGame> BoardGames => Set<BoardGame>();
+        public DbSet<Movie> Movies => Set<Movie>();
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseInMemoryDatabase("StorageLibraryAppDb");
+        }
     }
 }
