@@ -1,8 +1,6 @@
 ﻿using PublicLibraryApp.Entities;
 using PublicLibraryApp.Repositories;
 using PublicLibraryApp.Data;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-
 
 var bookRepository = new SqlRepository<Book>(new PublicLibraryAppDbContext());
 var movieRepository = new SqlRepository<Movie>(new PublicLibraryAppDbContext());
@@ -17,9 +15,9 @@ WriteAllToConsole(boardGameRepository);
 
 static void AddBooks(IRepository<Book> bookRepository)
 {
-    bookRepository.Add(new Book { Title = "Potęga podświadomości", Author = "Joseph Murphy", PublicationYear = 1980, ReleaseType = "Paper" });
-    bookRepository.Add(new Book { Title = "Opus magnum C++", Author = "Jerzy Grębosz", PublicationYear = 2015, ReleaseType = "E-book" });
-    bookRepository.Add(new Book { Title = "Filozofia dla zabieganych", Author = "Johny Johnson", PublicationYear = 2021, ReleaseType = "Audiobook" });
+    bookRepository.Add(new Book {Title = "Potęga podświadomości", Author = "Joseph Murphy", PublicationYear = 1985, ReleaseType = "Paper" });
+    bookRepository.Add(new Book {Title = "Opus magnum C++", Author = "Jerzy Grębosz", PublicationYear = 2015, ReleaseType = "E-book" });
+    bookRepository.Add(new Book {Title = "Filozofia dla zabieganych", Author = "Johny Johnson", PublicationYear = 2021, ReleaseType = "Audiobook" });
     bookRepository.Save();
 }
 
