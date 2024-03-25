@@ -2,10 +2,10 @@
 
 namespace PublicLibraryApp.Repositories
 {
-    public interface IWriteRepository<TEntity> where TEntity : class, IEntity
+    public interface IWriteRepository<T> where T : class, IEntity
     {
-        void Add(TEntity item);
-        void Remove(TEntity item);
+        void Add(T item);
+        void Remove(T item);
         void Save();
     }
 }

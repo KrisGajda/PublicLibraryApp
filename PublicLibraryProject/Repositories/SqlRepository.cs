@@ -3,31 +3,31 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PublicLibraryApp.Repositories
 {
-    public class SqlRepository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity, new()
+    public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
     {
         private readonly DbContext _dbContext;
-        private readonly DbSet<TEntity> _dbSet;
+        private readonly DbSet<T> _dbSet;
         
         public SqlRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
-            _dbSet = _dbContext.Set<TEntity>();
+            _dbSet = _dbContext.Set<T>();
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public IEnumerable<T> GetAll()
         {
             return _dbSet.ToList();
         }
 
-        public TEntity GetById(int id)
+        public T GetById(int id)
         {
             return _dbSet.Find(id);
         }
-        public void Add(TEntity item)
+        public void Add(T item)
         {
             _dbSet.Add(item);
         }
-        public void Remove(TEntity item)
+        public void Remove(T item)
         {
             _dbSet.Remove(item);
         }

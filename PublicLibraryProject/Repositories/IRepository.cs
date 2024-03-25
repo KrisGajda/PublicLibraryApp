@@ -2,8 +2,8 @@
 
 namespace PublicLibraryApp.Repositories
 {
-    public interface IRepository<TEntity> : IReadRepository<TEntity>, IWriteRepository<TEntity>
-        where TEntity : class, IEntity
+    public interface IRepository<T> : IReadRepository<T>, IWriteRepository<T>
+        where T : class, IEntity
     {
     }
 }

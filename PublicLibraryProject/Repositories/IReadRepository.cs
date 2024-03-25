@@ -2,9 +2,9 @@
 
 namespace PublicLibraryApp.Repositories
 {
-    public interface IReadRepository<out TEntity> where TEntity : class, IEntity
+    public interface IReadRepository<out T> where T : class, IEntity
     {
-        IEnumerable<TEntity> GetAll();
-        TEntity GetById(int id);
+        IEnumerable<T> GetAll();
+        T GetById(int id);
     }
 }
