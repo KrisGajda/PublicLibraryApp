@@ -1,14 +1,27 @@
-﻿namespace PublicLibraryApp.Entities
+﻿using System.Net.NetworkInformation;
+
+namespace PublicLibraryApp.Entities
 {
     public class Book : EntityBase
     {
-        public string? Title { get; set; }
-        public string? Author { get; set; }
-        public int PublicationYear { get; set; }
-        public string? ReleaseType { get; set; }
+        public string? Title
+        {
+            get { return parameterToLog1; }
+            set { parameterToLog1 = value; }
+        }
+        public string? Author
+        {
+            get { return parameterToLog2; }
+            set { parameterToLog2 = value; }
+        }
+        public string? PublicationYear 
+        {
+            get { return parameterToLog3; }
+            set { parameterToLog3 = value; }
+        }
+
         public override string ToString()
             => $"Id: {Id}, Title: {Title}, Author: {Author}," +
-            $" Publication year: {PublicationYear}, Release type: {ReleaseType}";
-
+            $" Publication year: {PublicationYear}";
     }
 }
